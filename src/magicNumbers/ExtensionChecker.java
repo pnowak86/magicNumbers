@@ -4,26 +4,26 @@ import java.io.File;
 
 public class ExtensionChecker {
 
-    public boolean checkExtension(File file){
-        String fileName=file.getName();
+    public boolean checkExtension(File file) {
+        String fileName = file.getName().toLowerCase();
 
 
-        if(fileName.endsWith(".jpg")){
+        if (fileName.endsWith(".jpg")) {
             System.out.println("File is jpg");
             return true;
         }
-        if(fileName.endsWith(".png")){
+        if (fileName.endsWith(".png")) {
             System.out.println("File is a png");
             return true;
         }
-        if(fileName.endsWith(".gif")){
+        if (fileName.endsWith(".gif")) {
             System.out.println("File is a gif");
             return true;
         }
 
-        if (fileName.endsWith(".txt")){
+        if (fileName.endsWith(".txt")) {
             System.out.println("File is a txt");
-        return true;
+            return true;
         }
 
         String[] arrayFromFileName = fileName.split("\\.");

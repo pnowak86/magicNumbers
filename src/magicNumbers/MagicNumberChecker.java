@@ -11,7 +11,7 @@ public class MagicNumberChecker {
         try (DataInputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
 
             int fileSignature = input.readInt();
-            input.reset();
+
             boolean isGif = checkIfFileIsGif(file);
 
             if (fileSignature == 0xffd8ffe0) {
@@ -41,14 +41,34 @@ public class MagicNumberChecker {
     public boolean checkIfFileIsGif(File file) {
         byte[] b = new byte[6];
 
+        byte[] type1Check = new byte[6];
+        type1Check[0] = 'G';
+        type1Check[1] = 'I';
+        type1Check[2] = 'F';
+        type1Check[3] = '8';
+        type1Check[4] = '7';
+        type1Check[5] = 'a';
+
+        byte[] type2Check = new byte[6];
+        type2Check[0] = 'G';
+        type2Check[1] = 'I';
+        type2Check[2] = 'F';
+        type2Check[3] = '8';
+        type2Check[4] = '9';
+        type2Check[5] = 'a';
+
+
         try (DataInputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
             input.read(b, 0, 6);
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        if (b[0] == 'G' && b[1] == 'I' && b[2] == 'F' && b[3] == '8' && (b[4] == '7' || b[4] == '9') && b[5] != 'a') {
+        if (Arrays.equals(b, type1Check) || Arrays.equals(b, type2Check)) {
+
             return true;
         }
+
         return false;
     }
 
