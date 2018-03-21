@@ -23,7 +23,7 @@ public class ExtensionChecker {
 
         String[] arrayFromFileName = fileName.split("\\.");
 
-        System.out.println("file is not supported!, extension is" + arrayFromFileName[1]);
+        System.out.println("file is not supported!, extension is: " + arrayFromFileName[1]);
         return false;
 
     }

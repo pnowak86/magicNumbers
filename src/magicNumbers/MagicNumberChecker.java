@@ -16,9 +16,6 @@ public class MagicNumberChecker {
             } else if (fileSignature == 0x89504E47) {
                 System.out.println("File is a PNG");
                 return true;
-            } else if (input.readUTF() == "UTF-16" || input.readUTF() == "UTF-8") {
-                System.out.println("File is a TXT File");
-
             }
 
         } catch (FileNotFoundException e) {
