@@ -24,7 +24,7 @@ public class MagicNumberChecker {
                 System.out.println("File is a GIF");
                 return true;
             } else if (fileSignature == 0x464F524D) {
-                System.out.println("File is a PNG");
+                System.out.println("File is a TXT");
                 return true;
             }
 
