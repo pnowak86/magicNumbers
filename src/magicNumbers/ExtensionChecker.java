@@ -16,6 +16,11 @@ public class ExtensionChecker {
             System.out.println("File is a png");
             return true;
         }
+        if(fileName.endsWith(".gif")){
+            System.out.println("File is a gif");
+            return true;
+        }
+
         if (fileName.endsWith(".txt")){
             System.out.println("File is a txt");
         return true;
