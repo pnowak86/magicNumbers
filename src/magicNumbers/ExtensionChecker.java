@@ -5,21 +5,25 @@ import java.io.File;
 public class ExtensionChecker {
 
     public boolean checkExtension(File file){
+        String fileName=file.getName();
 
-        if(file.getName().endsWith(".jpg")){
+
+        if(fileName.endsWith(".jpg")){
             System.out.println("File is jpg");
             return true;
         }
-        if(file.getName().endsWith(".png")){
+        if(fileName.endsWith(".png")){
             System.out.println("File is a png");
             return true;
         }
-        if (file.getName().endsWith(".txt")){
+        if (fileName.endsWith(".txt")){
             System.out.println("File is a txt");
         return true;
         }
 
-        System.out.println("file is not supported!");
+        String[] arrayFromFileName = fileName.split("\\.");
+
+        System.out.println("file is not supported!, extension is" + arrayFromFileName[1]);
         return false;
 
     }
