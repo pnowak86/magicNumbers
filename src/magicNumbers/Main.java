@@ -10,10 +10,7 @@ public class Main {
         MagicNumberChecker magicNumberChecker = new MagicNumberChecker();
         ExtensionChecker extensionChecker = new ExtensionChecker();
         Scanner scanner = new Scanner(System.in);
-
-        File file1 = new File("xx.hhh");
-        extensionChecker.checkExtension(file1);
-
+        
         boolean running = true;
 
         System.out.println("Welcome to file validator, please enter a path to file");

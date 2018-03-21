@@ -13,7 +13,7 @@ public class MagicNumberChecker {
             int fileSignature = input.readInt();
             input.reset();
             boolean isGif = checkIfFileIsGif(file);
-            
+
             if (fileSignature == 0xffd8ffe0) {
                 System.out.println("File is a JPG");
                 return true;
