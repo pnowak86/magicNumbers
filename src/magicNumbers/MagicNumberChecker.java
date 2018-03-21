@@ -16,24 +16,8 @@ public class MagicNumberChecker {
             } else if (fileSignature == 0x89504E47) {
                 System.out.println("File is a PNG");
                 return true;
-            }
-
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return false;
-    }
-
-    public boolean checkMagicNumberForTxt(File file){
-        try (DataInputStream input = new DataInputStream(new BufferedInputStream(new FileInputStream(file)))) {
-
-            int fileSignature = input.readInt();
-
-            if(true){
-                System.out.println("file is txt");
+            } else if (fileSignature == 0x464F524D) {
+                System.out.println("File is a PNG");
                 return true;
             }
 
@@ -44,7 +28,7 @@ public class MagicNumberChecker {
         }
 
         return false;
-
     }
 
+    
 }
